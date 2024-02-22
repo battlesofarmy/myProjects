@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: teal;
+    margin: 0;
+    padding: 0;
+  }
+  #ball{
+    background-color: red;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    position: relative;
+  }
+  #container{
+    height: 100vh;
+  }
+</style>
+<body>
+
+  <div id="container">
+    <div id="ball"></div>
+  </div>
+
+
+  <script>
+    const container = document.getElementById("container");
+    const ball = document.getElementById("ball");
+
+    let intTop, intLeft; 
+    function handaleMove(e){
+      const left = e.clientX - intLeft;
+      const top = e.clientY - intTop;
+      ball.style.left = `${left}px`;
+      ball.style.top = `${top}px`;
+    }
+
+
+ 
+    ball.addEventListener('mousedown',function(e){
+      intTop = e.clientY - ball.offsetTop;
+      intLeft = e.clientX - ball.offsetLeft;
+      container.addEventListener('mousemove',handaleMove);
+    })
+
+
+    ball.addEventListener('mouseup', function(){
+      container.removeEventListener('mousemove', handaleMove);
+    })
+  </script>
+</body>
+</html>
