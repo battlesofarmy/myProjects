@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    width: 50%;
+    margin: auto;
+  }
+  .box{
+    background-color: rgb(192, 192, 192);
+    font-weight: 600;
+    padding: 20px;
+    border-radius: 12px;
+  }
+  .seats span{
+    display: inline-block;
+    background-color: #F7F8F8;
+    width: 100px;
+    padding: 10px;
+    margin: 8px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .seats{
+    display: flex;
+    justify-content: space-between;
+  }
+  #seatList div{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+  }
+  button{
+    background-color: orange;
+    padding: 10px 14px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;;
+    border-radius: 8px;
+    border: none;
+    cursor: not-allowed;
+  }
+
+#seatList div:nth-last-child(){
+  color: red;
+}
+</style>
+<body>
+  <h2 class="box">Seat left <span id="seatLeft">40</span></h2>
+  <div class="seats">
+    <div class="left">
+    </div>
+    <div class="right">
+    </div>
+  </div>
+<br>
+<div class="box">
+  <div style="display: flex;justify-content: space-between;"><span>Seats <span id="setCount">0</span></span><span> Type</span> Price</div>
+  <hr>
+  <!-- <div id="seatList">Please Select a Seat</div> -->
+   <div id="seatList">
+    <div>Please Select a Seat</div>
+  </div>
+  <hr>
+  <div style="display: flex; justify-content: space-between;">Total Price: <div id="totalPrice">0</div></div>
+  <hr>
+  <div style="display: flex; justify-content: space-between;">
+    Grand Total: <div>
+       <button disabled id="btn" class="">Please Give Discueent, I am Poor Kid :)</button>
+    </div>
+    <div id="grandTotal">0</div>
+  </div>
+  
+</div>
+
+
+
+<script src="app.js"></script>
+</body>
+</html>
